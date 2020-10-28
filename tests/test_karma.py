@@ -15,11 +15,11 @@ if __name__ == '__main__':
 
 # Verify that karma_services methods are working properly on a mocked mongodb
 class KarmaChange(unittest.TestCase):
-    karma_storage = mongomock.MongoClient().db.karma
-    karma_service = KarmaMemberService(karma_storage)
+    karma_source = mongomock.MongoClient().db.karma
+    karma_service = KarmaMemberService(karma_source)
     karma_member = KarmaMember('1', '1', '1', '1')
 
-    def test_karma_increases(self):
+    def test_karma_increased(self):
         self.karma_service.upsert_karma_member(self.karma_member)
         assert self.karma_service.aggregate_member_by_karma(self.karma_member) == 1
         self.karma_service.upsert_karma_member(self.karma_member)
@@ -27,13 +27,13 @@ class KarmaChange(unittest.TestCase):
         for doc in self.karma_service.aggregate_member_by_channels(self.karma_member):
             assert doc['karma'] == 2
 
-    def test_karma_resets(self):
+    def test_karma_reset(self):
         self.karma_service.delete_all_karma(self.karma_member)
         assert self.karma_service.aggregate_member_by_karma(self.karma_member) is None
 
 
 # Verify that karma messages are identified correctly
-class KarmaGiving(unittest.TestCase):
+class KarmaDetection(unittest.TestCase):
     karma_producer = KarmaProducer(mock.MagicMock(), mock.MagicMock(), mock.MagicMock())
 
     dummy_wrong_message_content = 'laughing out loud brother'

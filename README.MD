@@ -1,39 +1,43 @@
 #  Aura - Discord
 
 Aura is a discord bot focused on rewarding user contributions through
-a point system called karma. It has the following features:
+an arbitrary point system called karma. It has the following features:
 
-* Give out karma on messages containing thanks, ty, thank you case-insensitive.
-    * Several Member Mentions in a message possible.
-    * Ignores other Mentions.
-    * Ignores bot mentions.
-    * Ignores message author mentions.
+* Give out karma on messages containing a custom list of case-insensitive keywords.
+    * Cooldowns are applied one-way to each pair of thankee-giver, that means that the giver-thankee can
+    swap while the cooldown of thankee-giver is still ticking.
+    * Ignores invalid mentions like: self author mentions, bot mentions, bot thanking other users.
+    * Ignores messages containing discord greentext, keywords enclosed in quatation marks.
 * Configurable Feedback on karma gain
-    - Logging to a channel.
-    - Thumbs up reaction to the message.
-    - Affirmation Message in same channel as the thank you message.
+    * Logging to a channel.
+    * Thumbs up reaction to the message.
+    * Affirmation Message in same channel as the thank you message.
+    * or all of the above.
 * Blacklist and Whitelist Members from giving out karma.
-    * Blacklisted Members will get a DM specifying who to contact to dispute it.
-* Get Karma of one or multiple Members through Mentions, or message author without mentions.
-* Karma Profile with the Profile Picture, full name (name + discriminator) or nick,
-total karma and karma breakdown by top x channels configured, single mention or no mention for message author profile.
+    * Blacklisted Members on trying to give karma will get a DM specifying who to contact to dispute it.
+* Get Karma of one or multiple Members through Mentions, or user id's.
+    * self karma requires no arguments.
+* Karma Profile with the Discord Profile Picture, full name (name + discriminator) or nick,
+total karma and karma breakdown by top x channels configured.
+    * single mention only.
+    * self profile requires no arguments.
 * Karma Leaderboard globally or per channel
- * provide optional argument of days to get a timed leaderboard
-* Members receive a cooldown in a one-way pair (giver-receiver) after giving it out or set the timer to 0,
-this means that theoretically the initial receiver can thank the giver while the cooldown period is still ticking.
-* Reset all Karma of a Member in a guild.
-* Delete karma from Members on message delete, reaction clear and reaction remove of the message that gave out karma.
+ * provide optional argument of days to get a time restricted leaderboard
+* Reset all Karma of a Member in a guild, this currently has no undo functionality.
+* Delete karma from Members on message delete, reaction clear and reaction removal.
 * Change most configuration on the fly by providing keys from the config.yaml.
 * Module Model, enable and disable features you don't need or like.
 * Karma Help Commands to provide you with all the information on aura and how it works,
 what configuration parameters mean etc.
-* Change Permission of every command but the help command.
+* Change Permission of every command but the help command, disable the help module if you don't need it.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
+
+This Bot requires a mongodb database
 
 To run this bot you need to manually fill out the following values in the config.yaml.example
 or create config.yaml with the following fields filled out.
@@ -72,10 +76,10 @@ python -m pytest tests/ or pytest tests/
 
 ## Requirements
 
-* see the [requirements file](requirements.txt) for the python app dependencies
+* see the [requirements file](pyproject.toml) for the python app dependencies
 * Docker
 * Docker-Compose compatible with 3.7
-* MongoDB (tested with version 4.2.5)
+* MongoDB (at least 4.2.5)
 
 
 ## Contributing
