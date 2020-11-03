@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Aura"
+name = "aura"
 version = "1.17.1"
 description = "Karma Discord Bot"
 authors = ["Georg Göring <g.goering@protonmail.com>"]
