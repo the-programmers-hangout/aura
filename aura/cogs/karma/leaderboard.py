@@ -4,11 +4,11 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import guild_only, TextChannelConverter, CommandError
 
-from core import datasource
-from core.decorator import has_required_role
-from core.service.mongo_service import KarmaMemberService
-from util.config import config
-from util.constants import embed_color, bold_field, leaderboard_usage
+from aura.core import datasource
+from aura.core.decorator import has_required_role
+from aura.core.service.mongo_service import KarmaMemberService
+from aura.util.config import config
+from aura.util.constants import leaderboard_usage, embed_color, bold_field
 
 log = logging.getLogger(__name__)
 

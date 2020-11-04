@@ -4,24 +4,25 @@ import sys
 from discord.ext import commands
 from discord.ext.commands import when_mentioned_or
 
-from cogs.general.error import CommandErrorHandler
-from cogs.general.help import Help, KarmaTutor
-from cogs.general.module import ModuleManager
-from cogs.general.permission import PermissionManager
-from cogs.general.settings import SettingsManager
-from cogs.karma.leaderboard import KarmaLeaderboard
-from cogs.karma.producer import KarmaProducer
-from cogs.karma.profile import KarmaProfile
-from cogs.karma.reduce import KarmaReducer, KarmaBlocker
-from util.config import config
-from util.constants import cog_map
+from aura.cogs.general.error import CommandErrorHandler
+from aura.cogs.general.help import Help, KarmaTutor
+from aura.cogs.general.module import ModuleManager
+from aura.cogs.general.permission import PermissionManager
+from aura.cogs.general.settings import SettingsManager
+from aura.cogs.karma.leaderboard import KarmaLeaderboard
+from aura.cogs.karma.producer import KarmaProducer
+from aura.cogs.karma.profile import KarmaProfile
+from aura.cogs.karma.reduce import KarmaReducer, KarmaBlocker
+from aura.util.config import config
+from aura.util.constants import cog_map
 
 logging.basicConfig(level=config['logging'],
                     format='%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
                     datefmt='%Y-%m-%d:%H:%M:%S',
                     stream=sys.stdout)
 
-if __name__ == '__main__':
+
+def main():
     client = commands.Bot(command_prefix=when_mentioned_or(config['prefix']))
     client.remove_command('help')
     module_manager = ModuleManager(client)
@@ -57,3 +58,7 @@ if __name__ == '__main__':
     cog_map['KarmaTutor'] = karma_tutor
 
     client.run(config['token'])
+
+
+if __name__ == '__main__':
+    main()

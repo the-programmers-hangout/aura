@@ -2,7 +2,7 @@ from collections import defaultdict
 
 from discord import Color
 
-from util.config import karma_delete_emoji
+from aura.util.config import karma_delete_emoji
 
 zero_width_space: str = '\u200b'
 revoke_message = 'If you {}, didn\'t intend to give karma to this person,' + \

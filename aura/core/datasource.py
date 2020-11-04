@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-from util.config import config
+from aura.util.config import config
 
 
 def datasource():

@@ -7,11 +7,11 @@ from discord import Embed
 from discord.ext import commands
 from discord.ext.commands import guild_only, CommandError
 
-from core.decorator import has_required_role
-from util.config import config, karma, thanks_list, blacklist, reaction_emoji
-from util.constants import embed_color, bold_field, author_discord, version, repository
-from util.conversion import strfdelta
-from util.embedutil import add_filler_fields
+from aura.core.decorator import has_required_role
+from aura.util.config import config, karma, thanks_list, blacklist, reaction_emoji
+from aura.util.constants import embed_color, bold_field, author_discord, version, repository
+from aura.util.conversion import strfdelta
+from aura.util.embedutil import add_filler_fields
 
 log = logging.getLogger(__name__)
 

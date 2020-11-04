@@ -5,7 +5,6 @@ from discord.ext import commands
 log = logging.getLogger(__name__)
 
 
-# based on gist https://gist.github.com/EvieePy/7822af90858ef65012ea500bcecf1612
 class CommandErrorHandler(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

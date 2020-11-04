@@ -2,8 +2,8 @@ import unittest
 
 import mongomock
 
-from core.model.member import Member
-from core.service.mongo_service import BlockerService, KarmaMemberService
+from aura.core.model.member import Member
+from aura.core.service.mongo_service import KarmaMemberService, BlockerService
 
 if __name__ == '__main__':
     unittest.main()

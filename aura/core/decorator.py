@@ -2,9 +2,9 @@ import logging
 
 from discord.ext.commands import check
 
-from util.config import config, roles
-from util.permission import permission_map
-from util.util import member_has_role
+from aura.util.config import config, roles
+from aura.util.permission import permission_map
+from aura.util.util import member_has_role
 
 log = logging.getLogger(__name__)
 

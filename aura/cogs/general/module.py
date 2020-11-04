@@ -2,14 +2,13 @@ import logging
 
 from discord.ext import commands
 
-from core.decorator import has_required_role
-from util.config import config
-from util.constants import cog_map
+from aura.core.decorator import has_required_role
+from aura.util.config import config
+from aura.util.constants import cog_map
 
 log = logging.getLogger(__name__)
 
 
-# based on https://github.com/Rapptz/RoboDanny/blob/master/cogs/admin.py#L18
 class ModuleManager(commands.Cog):
 
     def __init__(self, bot):

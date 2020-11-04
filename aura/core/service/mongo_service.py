@@ -3,8 +3,8 @@ import logging
 
 from pymongo.results import UpdateResult, DeleteResult
 
-from core.model.member import KarmaMember, Member
-from util.config import profile, config
+from aura.core.model.member import KarmaMember, Member
+from aura.util.config import profile, config
 
 log = logging.getLogger(__name__)
 

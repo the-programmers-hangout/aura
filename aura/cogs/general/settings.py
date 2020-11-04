@@ -5,10 +5,10 @@ from discord import Embed
 from discord.ext import commands
 from discord.ext.commands import guild_only
 
-from core.decorator import has_required_role
-from util.config import config, write_config, descriptions
-from util.constants import embed_color, hidden_config
-from util.embedutil import add_filler_fields
+from aura.core.decorator import has_required_role
+from aura.util.config import config, write_config, descriptions
+from aura.util.constants import hidden_config, embed_color
+from aura.util.embedutil import add_filler_fields
 
 log = logging.getLogger(__name__)
 

@@ -5,11 +5,11 @@ from discord import Embed
 from discord.ext import commands
 from discord.ext.commands import guild_only
 
-from core.decorator import has_required_role
-from util.config import config
-from util.constants import aura_permissions, embed_color, bold_field
-from util.embedutil import add_filler_fields
-from util.permission import permission_map, write_permissions
+from aura.core.decorator import has_required_role
+from aura.util.config import config
+from aura.util.constants import aura_permissions, embed_color, bold_field
+from aura.util.embedutil import add_filler_fields
+from aura.util.permission import permission_map, write_permissions
 
 log = logging.getLogger(__name__)
 

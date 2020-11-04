@@ -4,14 +4,14 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import guild_only
 
-from core import datasource
-from core.decorator import has_required_role
-from core.model.member import KarmaMember
-from core.service.mongo_service import KarmaMemberService
-from util.config import profile, config
-from util.constants import embed_color, bold_field
-from util.conversion import convert_content_to_member_set
-from util.embedutil import add_filler_fields
+from aura.core import datasource
+from aura.core.decorator import has_required_role
+from aura.core.model.member import KarmaMember
+from aura.core.service.mongo_service import KarmaMemberService
+from aura.util.config import profile, config
+from aura.util.constants import embed_color, bold_field
+from aura.util.conversion import convert_content_to_member_set
+from aura.util.embedutil import add_filler_fields
 
 log = logging.getLogger(__name__)
 

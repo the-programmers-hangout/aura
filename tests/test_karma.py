@@ -3,10 +3,10 @@ from unittest import mock
 
 import mongomock
 
-from cogs.karma.producer import KarmaProducer
-from core.model.member import KarmaMember
-from core.service.mongo_service import KarmaMemberService
-from core.service.validation_service import contains_valid_thanks
+from aura.cogs.karma.producer import KarmaProducer
+from aura.core.model.member import KarmaMember
+from aura.core.service.mongo_service import KarmaMemberService
+from aura.core.service.validation_service import contains_valid_thanks
 from tests.async_decorator import async_test
 
 if __name__ == '__main__':

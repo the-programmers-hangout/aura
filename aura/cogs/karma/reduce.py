@@ -5,13 +5,13 @@ from discord import File
 from discord.ext import commands
 from discord.ext.commands import has_any_role, guild_only
 
-from core import datasource
-from core.decorator import has_required_role
-from core.model.member import KarmaMember, Member
-from core.service.mongo_service import KarmaMemberService, BlockerService
-from util.config import roles, config, max_message_length
-from util.conversion import convert_content_to_member_set
-from util.util import member_has_role
+from aura.core import datasource
+from aura.core.decorator import has_required_role
+from aura.core.model.member import KarmaMember, Member
+from aura.core.service.mongo_service import KarmaMemberService, BlockerService
+from aura.util.config import roles, config, max_message_length
+from aura.util.conversion import convert_content_to_member_set
+from aura.util.util import member_has_role
 
 log = logging.getLogger(__name__)
 

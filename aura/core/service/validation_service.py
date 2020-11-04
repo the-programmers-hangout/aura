@@ -2,7 +2,7 @@ import re
 
 import discord
 
-from util.config import thanks_list
+from aura.util.config import thanks_list
 
 
 async def validate_message(message: discord.Message) -> bool:

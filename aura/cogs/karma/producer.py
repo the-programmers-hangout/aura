@@ -5,14 +5,14 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import guild_only
 
-from core import datasource
-from core.model.member import KarmaMember, Member
-from core.service.mongo_service import KarmaMemberService, BlockerService
-from core.service.validation_service import validate_message
-from core.timer import KarmaSingleActionTimer
-from util.config import config, karma, reaction_emoji
-from util.constants import revoke_message
-from util.util import clear_reaction
+from aura.core import datasource
+from aura.core.model.member import KarmaMember, Member
+from aura.core.service.mongo_service import KarmaMemberService, BlockerService
+from aura.core.service.validation_service import validate_message
+from aura.core.timer import KarmaSingleActionTimer
+from aura.util.config import config, karma, reaction_emoji
+from aura.util.constants import revoke_message
+from aura.util.util import clear_reaction
 
 log = logging.getLogger(__name__)
 

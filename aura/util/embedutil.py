@@ -1,6 +1,6 @@
 import discord
 
-from util.constants import zero_width_space, embed_max_columns
+from aura.util.constants import embed_max_columns, zero_width_space
 
 
 def add_filler_fields(embed: discord.Embed, collection, mode: str = '+', counter: int = 0) -> discord.Embed:

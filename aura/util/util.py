@@ -2,7 +2,7 @@ import logging
 
 import discord
 
-from util.config import reaction_emoji
+from aura.util.config import reaction_emoji
 
 log = logging.getLogger(__name__)
 
